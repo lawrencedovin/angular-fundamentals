@@ -5,7 +5,7 @@
         {{ passenger.id}} - {{ passenger.fullName }}
       </span>
   </li>
-  <li>{{ passenger | json }}</li>
+  <!-- <li>{{ passenger | json }}</li> -->
   <div class="date" *ngIf="passenger.checkedInDate">
     Check in date: {{ passenger.checkedInDate | date: 'MMMM d, y' }}
   </div>
