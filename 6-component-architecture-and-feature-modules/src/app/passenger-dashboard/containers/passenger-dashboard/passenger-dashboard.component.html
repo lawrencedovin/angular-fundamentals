@@ -1,3 +1,5 @@
+<app-passenger-count></app-passenger-count>
+<app-passenger-detail></app-passenger-detail>
 <ul *ngFor="let passenger of passengers">
   <li>
       <div class="status" [ngClass]="(passenger.checkedIn ? 'checkedIn' : 'checkedOut')"></div>
