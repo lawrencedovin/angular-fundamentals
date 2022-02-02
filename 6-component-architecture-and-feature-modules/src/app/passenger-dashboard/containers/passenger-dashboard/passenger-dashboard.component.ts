@@ -7,7 +7,7 @@ import { Passenger } from 'src/app/interfaces/passenger.interface';
   styleUrls: ['./passenger-dashboard.component.scss']
 })
 export class PassengerDashboardComponent implements OnInit {
-  passengers: Array<Passenger> = [];
+  passengers: Array<Passenger>;
 
   constructor() {}
 
