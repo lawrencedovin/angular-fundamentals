@@ -9,7 +9,7 @@ import { Passenger } from 'src/app/interfaces/passenger.interface';
 export class PassengerDetailComponent implements OnInit {
 
   @Input()
-  passengers: Array<Passenger>
+  detail: Passenger
 
   constructor() { }
 

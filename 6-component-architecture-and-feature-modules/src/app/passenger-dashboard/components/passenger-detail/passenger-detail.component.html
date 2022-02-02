@@ -1,15 +1,10 @@
-<ul *ngFor="let passenger of passengers">
-  <li>
-      <div class="status" [ngClass]="(passenger.checkedIn ? 'checkedIn' : 'checkedOut')"></div>
-      <span>
-        {{ passenger.id}} - {{ passenger.fullName }}
-      </span>
-  </li>
-  <!-- <li>{{ passenger | json }}</li> -->
-  <div class="date" *ngIf="passenger.checkedInDate">
-    Check in date: {{ passenger.checkedInDate | date: 'MMMM d, y' }}
-  </div>
-  <div class="children">
-    Children: {{ passenger.children?.length || 0 }}
-  </div>
-</ul>
+<div class="status" [ngClass]="(detail.checkedIn ? 'checkedIn' : 'checkedOut')"></div>
+<span>
+  {{ detail.id}} - {{ detail.fullName }}
+</span>
+<div class="date" *ngIf="detail.checkedInDate">
+  Check in date: {{ detail.checkedInDate | date: 'MMMM d, y' }}
+</div>
+<div class="children">
+  Children: {{ detail.children?.length || 0 }}
+</div>
