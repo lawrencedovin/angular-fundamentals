@@ -4,6 +4,7 @@
   </app-passenger-count>
   <app-passenger-detail
     *ngFor="let passenger of passengers"
-    [detail]="passenger">
+    [detail]="passenger"
+    (newNameEvent)="updateName($event)">
   </app-passenger-detail>
 </div>

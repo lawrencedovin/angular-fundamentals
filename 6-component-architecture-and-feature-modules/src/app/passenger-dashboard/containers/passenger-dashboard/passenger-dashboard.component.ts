@@ -53,4 +53,10 @@ export class PassengerDashboardComponent implements OnInit {
       },
     ]
   }
+
+  updateName(newName: any) {
+    this.passengers.filter((passenger) => {
+      if(passenger.fullName === newName.oldName) passenger.fullName = newName.newName;
+    })
+  }
 }

@@ -1,5 +1,6 @@
-<div class="status" [ngClass]="(detail.checkedIn ? 'checkedIn' : 'checkedOut')"></div>
+
 <span>
+<div class="status" [ngClass]="(detail.checkedIn ? 'checkedIn' : 'checkedOut')"></div>
   {{ detail.id}} - {{ detail.fullName }}
 </span>
 <div class="date" *ngIf="detail.checkedInDate">
@@ -8,3 +9,11 @@
 <div class="children">
   Children: {{ detail.children?.length || 0 }}
 </div>
+
+<div>
+  <input type="text" #newName>
+</div>
+
+<button (click)="confirmNameChange(newName.value)">Confirm</button>
+
+<p>Update Name: {{ nameInput }}</p>
