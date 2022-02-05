@@ -20,8 +20,11 @@
     Children: {{ detail.children?.length || 0 }}
   </div>
 
-  <button (click)="toggleEdit()">
+  <button (click)="toggleEdit()" class="btn btn-primary">
     {{ editing ? 'Done' : 'Edit' }}
+  </button>
+  <button (click)="onRemove()" class="btn btn-primary">
+    Remove
   </button>
 </div>
 <!-- <div>

@@ -8,10 +8,14 @@ import { Passenger } from 'src/app/interfaces/passenger.interface';
 })
 export class PassengerDetailComponent implements OnInit {
 
-  @Output() newNameEvent = new EventEmitter<object>();
-
   @Input()
-  detail: Passenger
+  detail: Passenger;
+
+  @Output()
+  edit = new EventEmitter<object>();
+
+  @Output()
+  remove = new EventEmitter<object>();
 
   editing = false;
 
@@ -21,20 +25,31 @@ export class PassengerDetailComponent implements OnInit {
   }
 
   onNameChange(value: string) {
-    console.log(`Value: ${value}`)
+    this.detail.fullName = value;
   }
 
   toggleEdit() {
+    if(this.editing) this.edit.emit(this.detail);
     this.editing = !this.editing;
-    // if(this.editing) {
-    //   let nameObject = {oldName: this.detail.fullName, newName: this.newName}
-    //   this.newNameEvent.emit(nameObject);
-    // }
   }
 
-  confirmNameChange(value: string) {
-    let nameObject = {oldName: this.detail.fullName, newName: value}
-    this.newNameEvent.emit(nameObject);
+  onRemove() {
+    this.remove.emit(this.detail);
   }
 
+
+  // newName = '';
+
+  // toggleEdit() {
+  //   this.editing = !this.editing;
+  //   // if(!this.editing) {
+  //   //   this.newNameEvent.emit({oldName: this.detail.fullName, newName: this.newName});
+  //   // }
+  // }
+
+
+  // confirmNameChange() {
+  //   // let nameObject = {oldName: this.detail.fullName, newName: value}
+  //   // this.newNameEvent.emit(nameObject);
+  // }
 }

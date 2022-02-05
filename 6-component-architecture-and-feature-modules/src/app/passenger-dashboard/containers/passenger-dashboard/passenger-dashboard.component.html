@@ -5,6 +5,7 @@
   <app-passenger-detail
     *ngFor="let passenger of passengers"
     [detail]="passenger"
-    (newNameEvent)="updateName($event)">
+    (edit)="handleEdit($event)"
+    (remove)="handleRemove($event)">
   </app-passenger-detail>
 </div>
