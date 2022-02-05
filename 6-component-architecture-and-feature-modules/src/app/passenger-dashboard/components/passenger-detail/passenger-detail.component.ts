@@ -13,11 +13,23 @@ export class PassengerDetailComponent implements OnInit {
   @Input()
   detail: Passenger
 
-  nameInput: String;
+  editing = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onNameChange(value: string) {
+    console.log(`Value: ${value}`)
+  }
+
+  toggleEdit() {
+    this.editing = !this.editing;
+    // if(this.editing) {
+    //   let nameObject = {oldName: this.detail.fullName, newName: this.newName}
+    //   this.newNameEvent.emit(nameObject);
+    // }
   }
 
   confirmNameChange(value: string) {

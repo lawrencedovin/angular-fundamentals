@@ -1,19 +1,32 @@
 
-<span>
-<div class="status" [ngClass]="(detail.checkedIn ? 'checkedIn' : 'checkedOut')"></div>
-  {{ detail.id}} - {{ detail.fullName }}
-</span>
-<div class="date" *ngIf="detail.checkedInDate">
-  Check in date: {{ detail.checkedInDate | date: 'MMMM d, y' }}
-</div>
-<div class="children">
-  Children: {{ detail.children?.length || 0 }}
-</div>
-
 <div>
-  <input type="text" #newName>
+  <span class="status" [ngClass]="(detail.checkedIn ? 'checkedIn' : 'checkedOut')"></span>
+  <div class="name">
+    <div *ngIf="editing">
+      <input
+        type="text"
+        [value]="detail.fullName"
+        (input)="onNameChange(name.value)"
+        #name>
+    </div>
+    <div *ngIf="!editing">
+      {{ detail.fullName }}
+    </div>
+  </div>
+  <div class="date" *ngIf="detail.checkedInDate">
+    Check in date: {{ detail.checkedInDate | date: 'MMMM d, y' }}
+  </div>
+  <div class="children">
+    Children: {{ detail.children?.length || 0 }}
+  </div>
+
+  <button (click)="toggleEdit()">
+    {{ editing ? 'Done' : 'Edit' }}
+  </button>
+</div>
+<!-- <div>
+  <input type="text" (input)="onNameChange(newName.value)" #newName>
 </div>
 
-<button (click)="confirmNameChange(newName.value)">Confirm</button>
-
-<p>Update Name: {{ nameInput }}</p>
+<p>New Name: {{ newNameInput }}</p>
+<button (click)="confirmNameChange(newName.value)">Confirm</button> -->

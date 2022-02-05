@@ -7,6 +7,7 @@ ul {
   width: 10px;
   border-radius: 50%;
   display: inline-block;
+  margin-right: 10px;
 }
 
 .checkedIn {
@@ -15,4 +16,8 @@ ul {
 
 .checkedOut {
   background-color: rgb(165, 24, 24);
+}
+
+.name {
+  display: inline-block;
 }
