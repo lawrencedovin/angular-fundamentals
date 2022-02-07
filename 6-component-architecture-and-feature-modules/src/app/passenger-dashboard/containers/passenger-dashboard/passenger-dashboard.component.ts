@@ -54,22 +54,26 @@ export class PassengerDashboardComponent implements OnInit {
     ]
   }
 
+
+  // handleEdit gets the edit EventEmitter value from the child.
+  // It then compares where the passenger and event id matches to update
+  // the passenger's fullname
   handleEdit(event: any) {
-    console.log(event);
+    this.passengers.filter((passenger) => {
+      if(passenger.id === event.id) passenger.fullName = event.fullName;
+    })
   }
 
+
+  // handleRemove gets the remove EventEmitter value from the child.
+  // There is then a variable that filters out any object that matches
+  // the object passed in. Afterwards the parent's passenger list
+  // is updated to the filtered list.
   handleRemove(event: any) {
     let updatedPassengers = this.passengers.filter((passenger) => {
       return passenger !== event;
     });
     this.passengers = updatedPassengers;
   }
-
-
-  // handleEdit(newName: any) {
-  //   this.passengers.filter((passenger) => {
-  //     if(passenger.fullName === newName.oldName) passenger.fullName = newName.newName;
-  //   })
-  // }
 
 }

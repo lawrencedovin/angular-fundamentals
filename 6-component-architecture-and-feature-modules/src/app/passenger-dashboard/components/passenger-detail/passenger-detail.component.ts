@@ -24,32 +24,22 @@ export class PassengerDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Update Name through Input
   onNameChange(value: string) {
     this.detail.fullName = value;
   }
 
+  // When done editing, the new name based
+  // from the updated input value is sent to
+  // the parent to update.
   toggleEdit() {
     if(this.editing) this.edit.emit(this.detail);
     this.editing = !this.editing;
   }
 
+  // Sends the passenger details to parent to notify
+  // the parent to remove.
   onRemove() {
     this.remove.emit(this.detail);
   }
-
-
-  // newName = '';
-
-  // toggleEdit() {
-  //   this.editing = !this.editing;
-  //   // if(!this.editing) {
-  //   //   this.newNameEvent.emit({oldName: this.detail.fullName, newName: this.newName});
-  //   // }
-  // }
-
-
-  // confirmNameChange() {
-  //   // let nameObject = {oldName: this.detail.fullName, newName: value}
-  //   // this.newNameEvent.emit(nameObject);
-  // }
 }
