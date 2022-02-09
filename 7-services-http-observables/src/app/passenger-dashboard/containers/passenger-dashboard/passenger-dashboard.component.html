@@ -1,0 +1,14 @@
+<div class="container">
+  <app-passenger-count
+    [items]="passengers">
+  </app-passenger-count>
+  <app-passenger-detail
+    *ngFor="let passenger of passengers"
+    [detail]="passenger"
+    (edit)="handleEdit($event)"
+    (remove)="handleRemove($event)">
+  </app-passenger-detail>
+  <p *ngFor="let passenger of passengers">
+    {{ passenger | json}}
+  </p>
+</div>
