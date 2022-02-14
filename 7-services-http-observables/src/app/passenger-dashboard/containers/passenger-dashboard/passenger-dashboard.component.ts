@@ -13,7 +13,12 @@ export class PassengerDashboardComponent implements OnInit {
   constructor(private passengerService: PassengerDashboardService) {}
 
   ngOnInit(): void {
-    this.passengers = this.passengerService.getPassengers();
+    this.passengerService
+      .getPassengers()
+      .subscribe((data: Passenger[]) => {
+        console.log('Data', data);
+        this.passengers = data;
+      });
   }
 
   // handleEdit gets the edit EventEmitter value from the child.
