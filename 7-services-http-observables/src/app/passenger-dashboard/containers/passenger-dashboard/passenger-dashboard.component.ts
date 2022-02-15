@@ -24,27 +24,34 @@ export class PassengerDashboardComponent implements OnInit {
   // It then compares where the passenger and event id matches to update
   // the passenger's fullname
   handleEdit(event: any) {
-    this.passengers = this.passengers.map((passenger: Passenger) => {
-      if(passenger.id === event.id) {
-        // If IDs match then use an immutable operation.
-        // Takes the original passenger object and merges
-        // the latest changes of the event in.
-        passenger = Object.assign({}, passenger, event);
-      }
-      return passenger;
-    });
+    this.passengerService
+      .updatePassenger(event)
+      .subscribe((data: Passenger) => {
+        this.passengers = this.passengers.map((passenger: Passenger) => {
+          if(passenger.id === event.id) {
+            // If IDs match then use an immutable operation.
+            // Takes the original passenger object and merges
+            // the latest changes of the event in.
+            passenger = Object.assign({}, passenger, event);
+          }
+          return passenger;
+        });
+      })
   }
-
 
   // handleRemove gets the remove EventEmitter value from the child.
   // There is then a variable that filters out any object that matches
   // the object passed in. Afterwards the parent's passenger list
   // is updated to the filtered list.
   handleRemove(event: any) {
-    let updatedPassengers = this.passengers.filter((passenger) => {
-      return passenger.id !== event.id;
-    });
-    this.passengers = updatedPassengers;
+    this.passengerService
+      .deletePassenger(event)
+      .subscribe((data: Passenger) => {
+        let updatedPassengers = this.passengers.filter((passenger) => {
+          return passenger.id !== event.id;
+        });
+        this.passengers = updatedPassengers;
+      })
   }
 
 }

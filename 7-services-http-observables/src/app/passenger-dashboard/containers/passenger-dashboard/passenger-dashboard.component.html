@@ -2,6 +2,9 @@
   <app-passenger-count
     [items]="passengers">
   </app-passenger-count>
+  <!-- Whenever the edit Event Emitter is emitted
+  it will trigger the handleEdit function with the
+  edit value passed inside. -->
   <app-passenger-detail
     *ngFor="let passenger of passengers"
     [detail]="passenger"
