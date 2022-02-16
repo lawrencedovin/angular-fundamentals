@@ -2,17 +2,17 @@
   "passengers": [
     {
       "id": 1,
-      "fullName": "Stephen123",
+      "fullName": "Stephen1234",
       "checkedIn": true,
       "checkedInDate": 1490742000000,
-      "baggage": ""
+      "baggage": "none"
     },
     {
       "id": 2,
       "fullName": "James",
       "checkedIn": true,
       "checkedInDate": 1491606000000,
-      "baggage": ""
+      "baggage": "hold-only"
     },
     {
       "id": 3,
