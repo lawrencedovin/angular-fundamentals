@@ -16,10 +16,6 @@
   <div class="date" *ngIf="detail.checkedInDate">
     Check in date: {{ detail.checkedInDate | date: 'MMMM d, y' }}
   </div>
-  <div class="children">
-    Children: {{ detail.children?.length || 0 }}
-  </div>
-
   <button (click)="toggleEdit()" class="btn btn-primary">
     {{ editing ? 'Done' : 'Edit' }}
   </button>
