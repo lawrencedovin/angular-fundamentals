@@ -1,0 +1,23 @@
+ul {
+  list-style: none;
+}
+
+.status {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.checkedIn {
+  background-color: rgb(3, 185, 3);
+}
+
+.checkedOut {
+  background-color: rgb(165, 24, 24);
+}
+
+.name {
+  display: inline-block;
+}

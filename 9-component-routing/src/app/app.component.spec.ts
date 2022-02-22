@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title '9-component-routing'`, () => {
+  it(`should have as title '6-component-architecture-and-feature-modules'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('9-component-routing');
+    expect(app.title).toEqual('6-component-architecture-and-feature-modules');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('9-component-routing app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('6-component-architecture-and-feature-modules app is running!');
   });
 });

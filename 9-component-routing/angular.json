@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "9-component-routing": {
+    "6-component-architecture-and-feature-modules": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/9-component-routing",
+            "outputPath": "dist/6-component-architecture-and-feature-modules",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "9-component-routing:build:production"
+              "browserTarget": "6-component-architecture-and-feature-modules:build:production"
             },
             "development": {
-              "browserTarget": "9-component-routing:build:development"
+              "browserTarget": "6-component-architecture-and-feature-modules:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "9-component-routing:build"
+            "browserTarget": "6-component-architecture-and-feature-modules:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "9-component-routing"
+  "defaultProject": "6-component-architecture-and-feature-modules"
 }
