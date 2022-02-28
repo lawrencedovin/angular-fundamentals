@@ -18,6 +18,9 @@ import { PassengerCountComponent } from './components/passenger-count/passenger-
 // service
 import { PassengerDashboardService } from './passenger-dashboard.service';
 
+// routing
+import { PassengerDashboardRoutingModule } from './passenger-dashboard.routing';
+
 @NgModule({
   declarations: [
     // CONTAINERS
@@ -34,14 +37,7 @@ import { PassengerDashboardService } from './passenger-dashboard.service';
     CommonModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
-  ],
-  exports: [
-    PassengerDashboardComponent,
-    PassengerViewerComponent,
-    PassengerFormComponent,
-    HomeComponent,
-    NotFoundComponent
+    PassengerDashboardRoutingModule
   ],
   providers: [
     PassengerDashboardService
