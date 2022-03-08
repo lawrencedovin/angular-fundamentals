@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Passenger } from 'src/app/interfaces/passenger.interface';
 import { PassengerDashboardService } from '../../passenger-dashboard.service';
 
@@ -10,7 +11,10 @@ import { PassengerDashboardService } from '../../passenger-dashboard.service';
 export class PassengerDashboardComponent implements OnInit {
   passengers: Array<Passenger>;
 
-  constructor(private passengerService: PassengerDashboardService) {}
+  constructor(
+    private router: Router,
+    private passengerService: PassengerDashboardService
+  ) {}
 
   ngOnInit(): void {
     this.passengerService
@@ -52,6 +56,10 @@ export class PassengerDashboardComponent implements OnInit {
         });
         this.passengers = updatedPassengers;
       })
+  }
+
+  handleView(event: any) {
+    this.router.navigate(['/passengers', event['id']]);
   }
 
 }

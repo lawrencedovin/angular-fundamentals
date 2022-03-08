@@ -12,10 +12,13 @@ export class PassengerDetailComponent implements OnChanges, OnInit {
   detail: Passenger;
 
   @Output()
-  edit = new EventEmitter<object>();
+  edit = new EventEmitter<Passenger>();
 
   @Output()
-  remove = new EventEmitter<object>();
+  remove = new EventEmitter<Passenger>();
+
+  @Output()
+  view = new EventEmitter<Passenger>();
 
   editing = false;
 
@@ -50,4 +53,10 @@ export class PassengerDetailComponent implements OnChanges, OnInit {
   onRemove() {
     this.remove.emit(this.detail);
   }
+
+  goToPassenger() {
+    this.view.emit(this.detail);
+  }
+
+
 }
